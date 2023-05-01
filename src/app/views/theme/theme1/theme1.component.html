@@ -1,0 +1,17 @@
+<c-row >
+    <c-col [sm]="6" *ngFor="let theme of themes">
+      <c-card class="mb-4">
+        <img cCardImg="top" src="././assets/img/themes/{{theme.image}}">
+        <c-card-body>
+          <h5 cCardTitle> {{theme.libelle}} </h5>
+          <p cCardText>
+            {{theme.description}}
+          </p>
+          <button  (click)="applyTheme(theme)"  class="me-1 btn btn-primary">
+            Apply theme
+          </button>
+        </c-card-body>
+      </c-card>
+    </c-col>
+</c-row>
+<c-toaster class="p-3" position="fixed" [placement]="placement"></c-toaster>

@@ -1,0 +1,15 @@
+<h2 mat-dialog-title class="card-title ">{{myData.title}}</h2>
+<form [formGroup]="categoryForm" (ngSubmit)="manageCategory()">
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearence="outline">
+      <mat-label>Category Name</mat-label>
+      <input matInput placeholder="Name" required formControlName="name"/>
+  </mat-form-field>
+</mat-dialog-content>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button type="submit" [disabled]="!categoryForm.valid" [mat-dialog-close]="msg" mat-raised-button color="primary">Save</button>
+</div>
+</form>
+
+

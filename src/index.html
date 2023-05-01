@@ -1,0 +1,78 @@
+<!--
+* CoreUI - Angular 13 Free Admin Template
+* @version v4.0.0-alpha.10
+* @link https://coreui.io/angular/
+* Copyright (c) 2017-2022 creativeLabs Łukasz Holeczek
+* License: MIT
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="./">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="CoreUI Free Angular Admin Template" name="description" />
+  <meta content="Łukasz Holeczek" name="author" />
+  <meta
+    content="CoreUI,Bootstrap,Admin,Template,Free,Angular,Dashboard,Typescript"
+    name="keyword"
+  />
+  <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+  <title>CoreUI Free Angular Admin Template</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <!--====== Google Font ======-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+  <link href="assets/images/favicon.png" rel="shortcut icon">
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.js" integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+  <!--====== Vendor Css ======-->
+  <link rel="stylesheet" href="assets/css/vendor.css">
+
+  <!--====== Utility-Spacing ======-->
+  <link rel="stylesheet" href="assets/css/utility.css">
+
+  <!--====== App ======-->
+  <link rel="stylesheet" href="assets/css/app.css">
+
+  </head>
+<body class="mat-typography">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<div class="fade show" style="text-align: center; padding-top: calc(100vh / 2); height: 100vh">
+  <i class="spinner-grow spinner-grow-sm"></i>
+  <span class="m-1">Loading...</span>
+</div>
+<script>
+  $(function () {
+    if (location.pathname.indexOf('/index') >= 0) {
+      $('link[href*="/media/css/_buttons.scss"]').prop('disable', true);
+    }
+  });
+  </script>
+<!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+<script>
+  window.ga = function() {
+      ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<!--====== Vendor Js ======-->
+<script src="assets/js/vendor.js"></script>
+
+<!--====== jQuery Shopnav plugin ======-->
+<script src="assets/js/jquery.shopnav.js"></script>
+
+<!--====== App ======-->
+<script src="assets/js/app.js"></script>
+</body>
+</html>

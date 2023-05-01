@@ -1,0 +1,16 @@
+<form class="row g-3 needs-validation" [formGroup]="shopSettings" (ngSubmit)="onSubmit()" novalidate>
+<div class="md-4">
+    <label for="shopName" class="form-label">Shop Name</label> 
+    <input type="text" class="form-control" id="shopName"  formControlName="shopName" required>
+  </div>
+<div class="md-4">
+    <label for="image" class="form-label">Logo</label>
+    <img [src]="imageSource" alt="logo" [style.display]="display">
+    <input type="file" class="form-control" id="image" aria-label="file example" (change)="onChange($event)"  required>
+</div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-secondary" style="margin-left:20px" type="reset">Reset</button>
+  </div>
+</form>
+<c-toaster class="p-3" position="fixed" [placement]="placement"></c-toaster>

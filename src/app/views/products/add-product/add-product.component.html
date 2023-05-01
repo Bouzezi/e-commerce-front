@@ -1,0 +1,34 @@
+<h2 mat-dialog-title class="card-title ">{{myData.title}}</h2>
+<form [formGroup]="productForm" (ngSubmit)="manageProduct()">
+<mat-dialog-content class="mat-typography">
+  <mat-form-field appearence="outline">
+      <mat-label>Product Name</mat-label>
+      <input matInput placeholder="Name" required formControlName="libelle"/>
+  </mat-form-field>
+  <mat-form-field appearence="outline">
+    <mat-label>Product description</mat-label>
+    <input matInput placeholder="description" required formControlName="description"/>
+</mat-form-field>
+<mat-form-field appearence="outline">
+  <mat-label>Product Category</mat-label>
+  <mat-select formControlName="categories"  required>
+    <mat-option *ngFor="let categ of categories"  [value]="categ.id">
+      {{categ.name}}
+    </mat-option>
+  </mat-select>
+  <!-- <mat-select *ngIf="myData.title == 'Update Product' " formControlName="categories" [(value)]="category" required>
+    <mat-option *ngFor="let categ of categories"  [value]="categ.id">
+      {{categ.name}}
+    </mat-option>
+  </mat-select> -->
+</mat-form-field>
+<mat-form-field appearence="outline">
+  <mat-label>Product price</mat-label>
+  <input matInput placeholder="price" required formControlName="price"/>
+</mat-form-field>
+</mat-dialog-content>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button type="submit" [disabled]="!productForm.valid" [mat-dialog-close]="msg" mat-raised-button color="primary">Save</button>
+</div>
+</form>
