@@ -47,8 +47,8 @@ import {
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import {  LayoutSiteComponent } from './views/allThemes/my-store/layout-site.component';
-import { MyStoreModule } from './views/allThemes/my-store/my-store.module';
+import {  LayoutSiteComponent } from './views/my-store/layout-site.component';
+import { MyStoreModule } from './views/my-store/my-store.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,

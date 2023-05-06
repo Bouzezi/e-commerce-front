@@ -1,6 +1,8 @@
+
 /**
  * This is main script file that contains JS code.
  */
+
 (function ($) {
     // Main Object
     var RESHOP = {};
@@ -121,10 +123,8 @@
 
 
 
-
-
     RESHOP.reshopNavigation = function() {
-        $('#navigation').shopNav();
+        $('#navigation').shopNav();       
         $('#navigation1').shopNav();
         $('#navigation2').shopNav();
         $('#navigation3').shopNav();
@@ -648,12 +648,12 @@
 
     // Check everything including DOM elements and images loaded
     $(window).on('load',function () {
-        RESHOP.showNewsletterModal();
+        /* RESHOP.showNewsletterModal();
         if ($primarySlider.length) {
             // Play slider when everything is loaded
             $primarySlider.data('owl.carousel').options.autoplay = true;
             $primarySlider.trigger('refresh.owl.carousel');
-        }
+        } */
     });
 
 

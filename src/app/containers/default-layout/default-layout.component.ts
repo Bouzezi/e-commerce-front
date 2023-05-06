@@ -20,12 +20,7 @@ export class DefaultLayoutComponent {
  
     
     if (navItems[1].name === "View Site"){
-      if(this.Myservice.themeId === 1)
-      this.path='/site/redStore';
-      else if (this.Myservice.themeId === 3)
-      this.path='/site/aviato';
-      else if (this.Myservice.themeId === 2)
-      this.path='/site/classimax';
+      this.path='/my-site/home';
       navItems[1].url=this.path;
     }
     console.log(navItems);
