@@ -6,7 +6,7 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
-import { LayoutSiteComponent } from './views/allThemes/my-store/layout-site.component';
+import { LayoutSiteComponent } from './views/my-store/layout-site.component';
 
 const routes: Routes = [
   
@@ -16,7 +16,7 @@ const routes: Routes = [
     children: [
         {
       path: '',
-      loadChildren: () => import('./views/allThemes/my-store/my-store.module').then((m) => m.MyStoreModule)
+      loadChildren: () => import('./views/my-store/my-store.module').then((m) => m.MyStoreModule)
       }
     ]
   }, 

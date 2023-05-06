@@ -29,7 +29,6 @@
     <!--====== Google Font ======-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
   <link href="assets/images/favicon.png" rel="shortcut icon">
-  <script src="https://code.jquery.com/jquery-3.6.4.slim.js" integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
   <!--====== Vendor Css ======-->
   <link rel="stylesheet" href="assets/css/vendor.css">
 
@@ -48,11 +47,20 @@
   <span class="m-1">Loading...</span>
 </div>
 <script>
-  $(function () {
+  window.onload = function() {
+    if (window.jQuery) {  
+        // jQuery is loaded  
+        alert("Yeah!");
+    } else {
+        // jQuery is not loaded
+        alert("Doesn't Work");
+    }
+}
+window.onload = function() {
     if (location.pathname.indexOf('/index') >= 0) {
       $('link[href*="/media/css/_buttons.scss"]').prop('disable', true);
     }
-  });
+  };
   </script>
 <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
 <script>

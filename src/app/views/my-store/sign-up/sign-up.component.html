@@ -1,0 +1,192 @@
+<div class="app-content">
+
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__wrap">
+                        <ul class="breadcrumb__list">
+                            <li class="has-separator">
+
+                                <a href="/#/my-site/home">Home</a></li>
+                            <li class="is-marked">
+
+                                <a href="/#/my-site/sign-up">Signup</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section 1 ======-->
+
+
+    <!--====== Section 2 ======-->
+    <div class="u-s-p-b-60">
+
+        <!--====== Section Intro ======-->
+        <div class="section__intro u-s-m-b-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section__text-wrap">
+                            <h1 class="section__heading u-c-secondary">CREATE AN ACCOUNT</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="gl-s-api mt-5 col-lg-6 col-md-8">
+                        <div class="u-s-m-b-15" (click)="showStoreForm">
+                            <button  class="gl-s-api__btn gl-s-api__btn--fb" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                                <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+                              </svg>
+                                <span style="margin-left: 43px;">Signup as a store</span>
+                            </button>
+                        </div>
+                        <div class="u-s-m-b-30" (click)="showInternauteForm">
+                            <button  class="gl-s-api__btn gl-s-api__btn--gplus" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                              </svg>
+                                <span style="margin-right:-53px;padding-left: 50px;">Signup as an individual</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Intro ======-->
+
+
+        <!--====== Section Content ======-->
+        <div class="section__content" [hidden]="!isInternaute">
+            <div class="container">
+                <div class="row row--center">
+                    <div class="col-lg-6 col-md-8 u-s-m-b-30">
+                        <div class="l-f-o">
+                            <div class="l-f-o__pad-box">
+                                <h1 class="gl-h1">PERSONAL INFORMATION</h1>
+                                
+                                <form class="l-f-o__form" (ngSubmit)="insertInternaute()" #myForm="ngForm">
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-fname">FIRST NAME *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="First Name" name="nom" [(ngModel)]="internaute.nom">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-lname">LAST NAME *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Last Name" name="prenom" [(ngModel)]="internaute.prenom">
+                                    </div>
+                                    
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-email">E-MAIL *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter your E-mail" name="email" [(ngModel)]="internaute.email">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-email">TEL *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter your TEL" name="tel" [(ngModel)]="internaute.tel">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-login">Login *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-login" placeholder="Enter your login" name="login" [(ngModel)]="internaute.login">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-password">PASSWORD *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter your Password" name="password" [(ngModel)]="internaute.password"></div>
+                                    <div class="u-s-m-b-15">
+
+                                        <button class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button>
+                                        <button class="btn btn--e-transparent-brand-b-2" type="reset" (click)="myForm.reset()">RESET</button>
+                                    </div>
+
+                                    <a class="gl-link" href="/#/my-site/home">Return to Store</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Content ======-->
+        <!--====== Section Content ======-->
+        <div class="section__content" [hidden]="isStore">
+            <div class="container">
+                <div class="row row--center">
+                    <div class="col-lg-6 col-md-8 u-s-m-b-30">
+                        <div class="l-f-o">
+                            <div class="l-f-o__pad-box">
+                                <h1 class="gl-h1">PERSONAL INFORMATION</h1>
+                                
+                                <form class="l-f-o__form" (ngSubmit)="insertStore()" #myForm1="ngForm">
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-intitule">Intitule *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-intitule" placeholder="intitule" name="intitule" [(ngModel)]="magasin.intitule">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-lname">matricule *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="matriculeF" name="matriculeF" [(ngModel)]="magasin.matriculeF">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-adresse">adress *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-adresse" placeholder="Enter your adress" name="adresse" [(ngModel)]="magasin.adresse">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-email">E-MAIL *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter your E-mail" name="email" [(ngModel)]="magasin.email">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-email">TEL *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter your TEL" name="tel" [(ngModel)]="magasin.tel">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-login">Login *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-login" placeholder="Enter your login" name="login" [(ngModel)]="magasin.login">
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        <label class="gl-label" for="reg-password">PASSWORD *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter your Password" name="password" [(ngModel)]="magasin.password"></div>
+                                    <div class="u-s-m-b-15">
+
+                                        <button class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button>
+                                        <button class="btn btn--e-transparent-brand-b-2" type="reset" (click)="myForm1.reset()">RESET</button>
+                                    </div>
+
+                                    <a class="gl-link" href="/#/my-site/home">Return to Store</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Content ======-->
+    </div>
+    <!--====== End - Section 2 ======-->
+</div>
