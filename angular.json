@@ -39,10 +39,7 @@
               "src/scss/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/jquery.shopnav.js",
-              "src/assets/js/vendor.js",
-              "src/assets/js/app.js"
+              "node_modules/jquery/dist/jquery.min.js"
             ],
             "allowedCommonJsDependencies": [
               "chart.js",
