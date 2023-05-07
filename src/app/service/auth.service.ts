@@ -14,6 +14,6 @@ export class AuthService {
     return this.http.post('http://localhost:8080/api/internaute/createInternaute',internaute);
   }
   addMagasin(magasin: Magasin):Observable<any>{
-    return this.http.post('http://localhost:8080/api/magasin/createStore',magasin);
+    return this.http.post('http://localhost:8080/api/magasin/createMagasin',magasin);
   }
 }

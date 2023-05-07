@@ -10,8 +10,8 @@ import { Magasin } from 'src/app/entities/Magasin';
 export class SignUpComponent implements OnInit {
 internaute=new Internaute
 magasin=new Magasin
-isInternaute = false
-isStore = false
+isInternaute = true
+isStore = true
   constructor(private loginService: AuthService) { }
 
   ngOnInit(): void {
@@ -34,15 +34,13 @@ isStore = false
   }
 
   showStoreForm(){
-    console.log("this.isStore");
-    
-      this.isStore=!this.isStore;
+      this.isInternaute=true
+      this.isStore=false;
   } 
 
   showInternauteForm(){
-    console.log(this.isInternaute);
-    
-      this.isInternaute=!this.isInternaute;
+      this.isStore=true
+      this.isInternaute=false;
   }
 
 }
