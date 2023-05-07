@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { DashMagasinComponent } from './magasin/dash-magasin/dash-magasin.component';
+import { DashMagasinMenuComponent } from './magasin/dash-magasin-menu/dash-magasin-menu.component';
+import { ProfileMagasinComponent } from './magasin/profile-magasin/profile-magasin.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
     HomeComponent,
     ShopComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    DashMagasinComponent,
+    DashMagasinMenuComponent,
+    ProfileMagasinComponent
   ],
   imports: [
     CommonModule,
