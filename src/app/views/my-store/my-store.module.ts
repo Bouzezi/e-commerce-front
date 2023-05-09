@@ -12,6 +12,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { DashMagasinComponent } from './magasin/dash-magasin/dash-magasin.component';
 import { DashMagasinMenuComponent } from './magasin/dash-magasin-menu/dash-magasin-menu.component';
 import { ProfileMagasinComponent } from './magasin/profile-magasin/profile-magasin.component';
+import { EditProfileMagasinComponent } from './magasin/edit-profile-magasin/edit-profile-magasin.component';
+import { ListProductsComponent } from './magasin/list-products/list-products.component';
+import { AddProductComponent } from './magasin/add-product/add-product.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { ProfileMagasinComponent } from './magasin/profile-magasin/profile-magas
     SignInComponent,
     DashMagasinComponent,
     DashMagasinMenuComponent,
-    ProfileMagasinComponent
+    ProfileMagasinComponent,
+    EditProfileMagasinComponent,
+    ListProductsComponent,
+    AddProductComponent
   ],
   imports: [
     CommonModule,
