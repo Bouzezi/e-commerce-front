@@ -6,6 +6,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { DashMagasinComponent } from './magasin/dash-magasin/dash-magasin.component';
 import { ProfileMagasinComponent } from './magasin/profile-magasin/profile-magasin.component';
+import { EditProfileMagasinComponent } from './magasin/edit-profile-magasin/edit-profile-magasin.component';
+import { ListProductsComponent } from './magasin/list-products/list-products.component';
+import { AddProductComponent } from './magasin/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -59,6 +62,27 @@ const routes: Routes = [
         component: ProfileMagasinComponent,
         data: {
           title: 'profile-magasin',
+        },
+      },
+      {
+        path: 'edit-profile-magasin',
+        component: EditProfileMagasinComponent,
+        data: {
+          title: 'edit-profile-magasin',
+        },
+      },
+      {
+        path: 'list-products-magasin',
+        component: ListProductsComponent,
+        data: {
+          title: 'list-products-magasin',
+        },
+      },
+      {
+        path: 'add-product',
+        component: AddProductComponent,
+        data: {
+          title: 'add-product',
         },
       },
     ],

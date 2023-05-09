@@ -1,0 +1,98 @@
+<div class="app-content">
+
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__wrap">
+                        <ul class="breadcrumb__list">
+                            <li class="has-separator">
+
+                                <a href="/#/my-site/home">Home</a></li>
+                            <li class="is-marked">
+
+                                <a href="/#/my-site/dash-magasin">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section 1 ======-->
+
+
+    <!--====== Section 2 ======-->
+    <div class="u-s-p-b-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="dash">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <app-dash-magasin-menu></app-dash-magasin-menu>
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                            <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white">
+                                <div class="dash__pad-2">
+                                    <h1 class="dash__h1 u-s-m-b-14">Edit Profile</h1>
+
+                                    <span class="dash__text u-s-m-b-30">Looks like you haven't update your profile</span>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form class="dash-edit-p" (ngSubmit)="updateProfileStore()" #Form="ngForm">
+                                                <div class="gl-inline">
+                                                    <div class="u-s-m-b-30">
+
+                                                        <label class="gl-label" for="reg-fname">NAME *</label>
+
+                                                        <input class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="Name" name="intitule" [(ngModel)]="magasin.intitule"></div>
+                                                    <div class="u-s-m-b-30">
+
+                                                        <label class="gl-label" for="reg-email">Email *</label>
+
+                                                        <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Email" name="email" [(ngModel)]="magasin.email"></div>
+                                                </div>
+                                                <div class="gl-inline">
+                                                    <div class="u-s-m-b-30">
+
+                                                        <label class="gl-label" for="reg-phone">PHONE *</label>
+
+                                                        <input class="input-text input-text--primary-style" type="text" id="reg-phone" placeholder="Phone" name="tel" [(ngModel)]="magasin.tel"></div>
+                                                    <div class="u-s-m-b-30">
+
+                                                        <label class="gl-label" for="reg-matricule">MATIRICULE *</label>
+
+                                                        <input class="input-text input-text--primary-style" type="text" id="reg-matricule" placeholder="matricule" name="matriculeF" [(ngModel)]="magasin.matriculeF"></div>
+                                                </div>
+                                                <div class="gl-inline">
+                                                    <div class="u-s-m-b-30">
+
+                                                        <label class="gl-label" for="reg-Address">ADDRESS *</label>
+
+                                                        <input class="input-text input-text--primary-style" type="text" id="reg-Address" placeholder="Address" name="adresse" [(ngModel)]="magasin.adresse"></div>
+                                                    <div class="u-s-m-b-30">
+
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn--e-brand-b-2" type="submit">SAVE</button>
+                                                <button class="btn btn--e-transparent-brand-b-2" type="reset" (click)="Form.reset()">RESET</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Content ======-->
+    </div>
+    <!--====== End - Section 2 ======-->
+</div>

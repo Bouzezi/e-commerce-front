@@ -14,6 +14,8 @@ export class SignInComponent implements OnInit {
   login = new Login
   isInternaute = true
   isStore = true
+  id_inter:any
+  id_store:any
 
   constructor(private loginService: AuthService) { }
 
@@ -25,6 +27,8 @@ export class SignInComponent implements OnInit {
     
     this.loginService.loginInternaute(this.login).subscribe(res => {
       console.log(res);
+      this.id_inter=res;
+      localStorage.setItem("id_inter",this.id_inter);
     }) 
   }
 
@@ -33,6 +37,8 @@ export class SignInComponent implements OnInit {
     
     this.loginService.loginMagasin(this.login).subscribe(res => {
       console.log(res);
+      this.id_store=res;
+      localStorage.setItem("id_store",this.id_store);
     }) 
   }
 
