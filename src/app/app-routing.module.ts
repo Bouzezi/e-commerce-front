@@ -22,7 +22,7 @@ const routes: Routes = [
   }, 
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'my-site/home',
     pathMatch: 'full'
   }, 
   {
@@ -127,7 +127,7 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
-  {path: '**', redirectTo: 'dashboard'}
+  {path: '**', redirectTo: 'my-site/home'}
 ];
 
 @NgModule({
