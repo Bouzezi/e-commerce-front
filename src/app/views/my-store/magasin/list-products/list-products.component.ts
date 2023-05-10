@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-products.component.scss']
 })
 export class ListProductsComponent implements OnInit {
-
+  products=[]
+  value:any
+  page:number = 1
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  search(){
+   
+  }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MyStoreRoutingModule } from './my-store-routing.module';
 import { HeaderComponent } from './header/header.component';
@@ -35,6 +36,7 @@ import { AddProductComponent } from './magasin/add-product/add-product.component
   imports: [
     CommonModule,
     FormsModule,
+    NgxPaginationModule,
     MyStoreRoutingModule
   ],
   exports:[

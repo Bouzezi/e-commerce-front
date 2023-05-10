@@ -1,44 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-//import { Internaute } from 'src/app/entities/Internaute';
 import { Login } from 'src/app/entities/Login';
-//import { Magasin } from 'src/app/entities/Magasin';
 import { AuthService } from '../../../service/auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-/*   internaute=new Internaute
-  magasin=new Magasin */
   login = new Login
   isInternaute = true
   isStore = true
   id_inter:any
   id_store:any
 
-  constructor(private loginService: AuthService) { }
+  constructor(private loginService: AuthService,private route:Router) { }
 
   ngOnInit(): void {
   }
 
   loginInternaute(){
     console.log(this.login);
-    
+    localStorage.clear();
     this.loginService.loginInternaute(this.login).subscribe(res => {
       console.log(res);
       this.id_inter=res;
       localStorage.setItem("id_inter",this.id_inter);
+      this.route.navigateByUrl('/my-site/dash-magasin')
     }) 
   }
 
   loginStore(){
     console.log(this.login);
-    
+    localStorage.clear();
     this.loginService.loginMagasin(this.login).subscribe(res => {
       console.log(res);
-      this.id_store=res;
+      this.id_store=res;      
       localStorage.setItem("id_store",this.id_store);
+      this.route.navigateByUrl('/my-site/dash-magasin')
     }) 
   }
 

@@ -10,10 +10,14 @@ import { Magasin } from 'src/app/entities/Magasin';
 export class DashMagasinComponent implements OnInit {
   id_store:any
   magasin:any=new Magasin
-    constructor(private magasinService : MagasinService) { }
+  annances=[]
+  value:any
+  page:number = 1
+    constructor(private magasinService : MagasinService ) { }
   
     ngOnInit(): void {
       this.id_store=localStorage.getItem("id_store");
+     //this.id_store = this.route.snapshot.paramMap.get('id');
       this.getStoreById(this.id_store);
     }
     getStoreById(id:any){
@@ -22,5 +26,7 @@ export class DashMagasinComponent implements OnInit {
         this.magasin=res;
       }) 
     }
-
+    search(){
+   
+    }
 }

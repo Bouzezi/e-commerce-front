@@ -47,26 +47,32 @@
 
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:120px">
-                                    <li>
+                                        <li (click)="checkLogin()">
+                                            <a><i class="fas fa-user-circle u-s-m-r-6"></i>
 
-                                        <a href="/#/my-site/dash-magasin"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <span >Account</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/#/my-site/sign-up"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                            <span>Account</span></a></li>
-                                    <li>
+                                                <span>Signup</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/#/my-site/sign-in"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                        <a href="/#/my-site/sign-up"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                <span>Signin</span>
+                                            </a>
+                                        </li>
 
-                                            <span>Signup</span></a></li>
-                                    <li>
+                                        <li (click)="signout()">
 
-                                        <a href="/#/my-site/sign-in"><i class="fas fa-lock u-s-m-r-6"></i>
+                                            <a href="/#/my-site/sign-in"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                            <span>Signin</span></a></li>
-                                    <li>
-
-                                        <a href="/#/my-site/sign-in"><i class="fas fa-lock-open u-s-m-r-6"></i>
-
-                                            <span>Signout</span></a></li>
+                                                <span >Signout</span>
+                                            </a>
+                                        </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>
