@@ -35,6 +35,26 @@
                         <div class="col-lg-3 col-md-12">
                             <app-dash-magasin-menu></app-dash-magasin-menu>
                         </div>
+                        <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Publish this product</h5>    
+                    </div>
+                    <div class="modal-body">
+                        <div class="gl-inline">
+                            <label class="gl-label" for="annonce"> </label>
+                            <input class="input-text input-text--primary-style" type="text" id="annonce" placeholder="Annonce Name" name="annonceName" [(ngModel)]="annonce.nomAnnonce">
+                        </div>
+                    </div>
+                    <div class="modal-footer" >
+                        <button type="button" class="btn btn-secondary" (click)="publish()">Publish</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
                         <div class="col-lg-9 col-md-12">
                             <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white u-s-m-b-30">
                                 <div class="dash__pad-2">
@@ -56,7 +76,6 @@
                                                 <th>Action</th>
                                                 <th>Product Name</th>
                                                 <th>Price</th>
-                                                <th>Status</th>
                                                 <th>Sub Category</th> 
                                                 <th>Description</th>
                                             </tr>
@@ -64,31 +83,13 @@
                                         <tbody>
                                             <tr *ngFor="let prod of products | paginate: { itemsPerPage: 5,currentPage: page};" >
                                                 <td>
-                                                    <a class="address-book-edit btn--e-transparent-platinum-b-2" href="dash-address-edit.html">Publish</a>&nbsp;&nbsp;
-                                                    <a class="address-book-edit btn--e-transparent-platinum-b-2" href="dash-address-edit.html">Delete</a>
+                                                    <button class="address-book-edit btn--e-transparent-platinum-b-2" data-toggle="modal" data-target="#exampleModal" (click)="saveId(prod.id)">Publish</button>&nbsp;&nbsp;
+                                                    <button class="address-book-edit btn--e-transparent-platinum-b-2">Delete</button>
                                                 </td>
-                                                <td>John Doe</td>
-                                                <td>4247 Ashford Drive Virginia VA-20006 USA</td>
-                                                <td>Virginia VA-20006 USA</td>
-                                                <td>(+0) 900901904</td>
-                                                <td>
-                                                    <div class="gl-text">Default Shipping Address</div>
-                                                    <div class="gl-text">Default Billing Address</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a class="address-book-edit btn--e-transparent-platinum-b-2" href="dash-address-edit.html">Publish</a>&nbsp;&nbsp;
-                                                    <a class="address-book-edit btn--e-transparent-platinum-b-2" href="dash-address-edit.html">Delete</a>
-                                                </td>
-                                                <td>Doe John</td>
-                                                <td>1484 Abner Road</td>
-                                                <td>Eau Claire WI - Wisconsin</td>
-                                                <td>(+0) 7154419563</td>
-                                                <td>
-                                                    <div class="gl-text">Default Shipping Address</div>
-                                                    <div class="gl-text">Default Billing Address</div>
-                                                </td>
+                                                <td>{{prod.labelle}}</td>
+                                                <td>{{prod.prix}}</td>
+                                                <td>{{prod.sousCategory.nom_sous_category}}</td>
+                                                <td>{{prod.description}}</td>
                                             </tr>
                                         </tbody>
                                     </table>

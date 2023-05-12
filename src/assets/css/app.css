@@ -78,7 +78,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0; }
-
+a{
+  text-decoration: none;
+}
 h1 {
   font-size: 50px;
   line-height: 50px; }
@@ -666,6 +668,7 @@ body {
     display: inline-block; }
     .breadcrumb__list > li > a {
       color: #a0a0a0;
+      text-decoration: none;
       font-size: 13px;
       font-weight: 700;
       transition: color 0.5s; }
@@ -3372,7 +3375,8 @@ input::-ms-clear {
     .dash__f-list > li > a {
       font-size: 13px;
       display: block;
-      color: #000000; }
+      color: #000000; 
+    text-decoration: none;}
 
 .dash-l-r {
   display: -ms-flexbox;
@@ -3424,7 +3428,7 @@ input::-ms-clear {
 .dash__w-text {
   display: block;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 1;
   color: #000000; }
 
@@ -4958,7 +4962,8 @@ input::-ms-clear {
       padding-left: 8px; }
       .shop-w__category-list > li ul li a {
         font-size: 13px;
-        color: #7f7f7f;
+        text-decoration: none;
+        color: black;
         transition: color 110ms ease-in-out; }
         .shop-w__category-list > li ul li a:hover {
           color: #ff4500; }
@@ -5545,6 +5550,7 @@ input::-ms-clear {
   visibility: hidden; }
   .has-dropdown > ul > li > a {
     display: block;
+    text-decoration: none;
     padding: 8px 20px;
     color: #333333;
     font-size: 12px;
@@ -5641,6 +5647,7 @@ input::-ms-clear {
     .has-dropdown > ul > li {
       padding: 0; }
       .has-dropdown > ul > li > a {
+        text-decoration: none;
         display: block; }
   .ah-list > li > ul > li > a {
     padding: 8px 36px; }
