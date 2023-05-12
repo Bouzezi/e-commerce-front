@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MagasinService } from '../../../../service/magasin.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dash-magasin-menu',
   templateUrl: './dash-magasin-menu.component.html',
@@ -10,7 +11,13 @@ export class DashMagasinMenuComponent implements OnInit {
   totalProducts:any
   nombreAnnonce:any
   selected:boolean=false
-  constructor(private magasinService : MagasinService) { }
+  private subscriptionName: Subscription; //important to create a subscription
+  constructor(private magasinService : MagasinService) { 
+    this.subscriptionName= this.magasinService.getUpdate().subscribe(res => { 
+              this.getTotalProducts();
+              this.nombreProduitAnnonce();
+             });
+   }
 
   ngOnInit(): void {
     this.id_store=localStorage.getItem("id_store");

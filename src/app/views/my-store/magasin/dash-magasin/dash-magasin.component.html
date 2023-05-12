@@ -109,18 +109,16 @@
                                     <table class="dash__table">
                                         <thead>
                                             <tr>
-                                                <th>Product Name</th>
-                                                <th>Price</th>
-                                                <th>Sub Category</th> 
-                                                <th>Description</th>
+                                                <th>Id</th>
+                                                <th>AnnonceName</th>
+                                                <th>dateCreation</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let annonce of annonces | paginate: { itemsPerPage: 5,currentPage: page};">
-                                                <td>{{annonce.labelle}}</td>
-                                                <td>{{annonce.prix}}</td>
-                                                <td>{{annonce.sousCategory.nom_sous_category}}</td>
-                                                <td>{{annonce.description}}</td>
+                                                <td>{{annonce.id}}</td>
+                                                <td>{{annonce.nomAnnonce}}</td>
+                                                <td>{{annonce.dateCreation}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
