@@ -9,6 +9,7 @@ import { ProfileMagasinComponent } from './magasin/profile-magasin/profile-magas
 import { EditProfileMagasinComponent } from './magasin/edit-profile-magasin/edit-profile-magasin.component';
 import { ListProductsComponent } from './magasin/list-products/list-products.component';
 import { AddProductComponent } from './magasin/add-product/add-product.component';
+import { AnnonceDetailComponent } from './annonce-detail/annonce-detail.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,13 @@ const routes: Routes = [
         component: AddProductComponent,
         data: {
           title: 'add-product',
+        },
+      },
+      {
+        path: 'annonce-detail/:id',
+        component: AnnonceDetailComponent,
+        data: {
+          title: 'annonce-detail',
         },
       },
     ],

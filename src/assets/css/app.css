@@ -4873,12 +4873,10 @@ input::-ms-clear {
   content: "\F067"; }
 
 .shop-w__toggle {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  left: 40%;
   padding: 8px 12px;
   background-color: transparent;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   right: 10px;
   font-size: 12px;
   cursor: pointer;
