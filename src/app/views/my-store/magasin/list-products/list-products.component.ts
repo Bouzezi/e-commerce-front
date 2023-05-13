@@ -16,7 +16,14 @@ export class ListProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id_store=localStorage.getItem("id_store");
-   this.getProductsNonAnnoce();
+   //this.getProductsNonAnnoce();
+   this.getAllProductsByIdClient();
+  }
+  getAllProductsByIdClient(){
+    this.magasinService.getAllProductsByIdClient(this.id_store).subscribe(res => {
+      console.log(res);
+      this.products=res;
+    }) 
   }
   getProductsNonAnnoce(){
     this.magasinService.getProductsNonAnnonce(this.id_store).subscribe(res => {
@@ -29,7 +36,15 @@ export class ListProductsComponent implements OnInit {
     this.annonce.idC=this.id_store;
     this.magasinService.createAnnonce(this.annonce).subscribe(res => {
       console.log(res);
-      window.location.reload();
+      this.magasinService.sendUpdate("notifiy")
+      this.getAllProductsByIdClient();
+    })
+  }
+  delete(id:any){
+    this.magasinService.deleteProduct(id).subscribe(res=>{
+      console.log(res);
+      this.magasinService.sendUpdate("notifiy")
+      this.getAllProductsByIdClient();
     })
   }
   search(){

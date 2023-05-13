@@ -1,7 +1,18 @@
-.show{
-    display:block;
-}
 
-.hide{
-    display:none;
-}
+  .my-pagination ::ng-deep  .ngx-pagination {
+    padding-left: 0px !important;
+  }
+  
+  .my-pagination ::ng-deep  .ngx-pagination .current,
+  .btn-info {
+    background: #ff4500 !important;
+    border: transparent !important;
+    border-radius: 20px !important;
+  }
+  
+  .my-pagination ::ng-deep  .ngx-pagination .current:hover {
+    background: #ff4500 !important;
+    border-radius: 20px !important; 
+    border: transparent !important;
+  }
+  
