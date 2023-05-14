@@ -8,11 +8,10 @@ export class AnnonceDto{
     description!:string;
     idSousCateg!:any;
     nom_sous_category!:string;
-    idC!:string;
+    idC!:number;
     dateCreation!:string;
     nomAnnonce!:string;
 
     constructor(){
-
     }
 }

@@ -127,6 +127,7 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
+  
   {path: '**', redirectTo: 'my-site/home'}
 ];
 
