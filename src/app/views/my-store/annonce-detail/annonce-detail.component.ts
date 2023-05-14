@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ShopService } from '../../../service/shop.service';
 import { AnnonceDto } from '../../../entities/AnnonceDto';
-import { ActivatedRoute } from '@angular/router';
+import { Client } from '../../../entities/Client';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-annonce-detail',
@@ -17,8 +18,8 @@ export class AnnonceDetailComponent implements OnInit {
   i=0;
   images:any=[];
   slides:any=[];
-
-  constructor(private shopService : ShopService,private route: ActivatedRoute) {}
+  client=new Client;
+  constructor(private shopService : ShopService,private route: ActivatedRoute,private router:Router) {}
 
   ngOnInit(): void {
     this.idAnnonce= this.route.snapshot.params['id'];
@@ -55,6 +56,7 @@ export class AnnonceDetailComponent implements OnInit {
         this.ann.nomAnnonce=this.annonce.nomAnnonce;
         this.listAnnonces.push(this.ann);
         this.FindByAnnonceSousCategoryLimit(this.ann.idSousCateg);
+        this.getClientById(this.ann.idC)
     }
 
     getAnnoncesList(myListAnnonce:any){
@@ -103,6 +105,20 @@ export class AnnonceDetailComponent implements OnInit {
 
         }
       )
+    }
+    getClientById(id:any){
+      this.shopService.getClientById(id).subscribe(res=>{
+        console.log(res);
+        this.client.id=res.id;
+        this.client.owner=res.Owner;
+        this.client.adresse=res.adresse;
+        this.client.tel=res.tel;
+        this.client.email=res.email;
+      })   
+    }
+
+    navigateToProductDetails(id: number) {
+      this.router.navigate(['/product-details', id]);
     }
   
 }

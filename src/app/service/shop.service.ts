@@ -40,4 +40,8 @@ export class ShopService {
     queryParams = queryParams.append("v1",id);
     return this.http.get(url,{params:queryParams});
   }
+
+  getClientById(id:number):Observable<any>{
+    return this.http.get('http://localhost:8080/api/client/getClientById/'+id);
+  }
 }
