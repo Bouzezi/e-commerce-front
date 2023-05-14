@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams} from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-
+import { Commande } from '../entities/Commande';
 @Injectable({
   providedIn: 'root'
 })
@@ -43,5 +43,11 @@ export class ShopService {
 
   getClientById(id:number):Observable<any>{
     return this.http.get('http://localhost:8080/api/client/getClientById/'+id);
+  }
+  addCommande(commande:Commande):Observable<any>{
+    return this.http.post('http://localhost:8080/api/commande/create',commande);
+  }
+  getAllSocietesLivraison():Observable<any>{
+    return this.http.get('http://localhost:8080/api/stelivraison/getAllSteLivraison');
   }
 }

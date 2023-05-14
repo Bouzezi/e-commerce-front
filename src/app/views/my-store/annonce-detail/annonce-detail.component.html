@@ -86,7 +86,7 @@
                                     </ul>
                                 </div>
                                 <div class="u-s-m-b-15">
-                                    <button class="command" data-toggle="modal" type="submit" data-target="#exampleModal">PLACE ORDER</button>
+                                    <button class="command" data-toggle="modal" type="submit" data-target="#exampleModal" (click)="getStl()">PLACE ORDER</button>
                                 </div>
                                 <!-- Button trigger modal -->
             
@@ -101,20 +101,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="checkout-f__delivery">
+                        <form class="checkout-f__delivery" (ngSubmit)="addCommande()">
                             <div class="u-s-m-b-30">
                                 <!--====== First Name, Last Name ======-->
                                     <div class="u-s-m-b-15">
 
                                         <label class="gl-label" for="billing-fname">FIRST NAME *</label>
 
-                                        <input class="modInput input-text input-text--primary-style" type="text" id="billing-fname" data-bill="">
+                                        <input class="modInput input-text input-text--primary-style" type="text" id="billing-fname" data-bill="" name="nom" [(ngModel)]="commande.nom">
                                     </div>
                                 <div class="u-s-m-b-15">
 
                                     <label class="gl-label" for="billing-lname">LAST NAME *</label>
 
-                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-lname" data-bill="">
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-lname" data-bill="" name="prenom" [(ngModel)]="commande.prenom">
                                 </div>
                                 <!--====== End - First Name, Last Name ======-->
                                 <!--====== E-MAIL ======-->
@@ -122,7 +122,7 @@
 
                                     <label class="gl-label" for="billing-email">E-MAIL *</label>
 
-                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-email" data-bill=""></div>
+                                    <input class="modInput input-text input-text--primary-style" type="email" id="billing-email" data-bill="" name="email" [(ngModel)]="commande.email"></div>
                                 <!--====== End - E-MAIL ======-->
 
 
@@ -131,7 +131,7 @@
 
                                     <label class="gl-label" for="billing-phone">PHONE *</label>
 
-                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-phone" data-bill=""></div>
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-phone" data-bill="" name="tel" [(ngModel)]="commande.tel"></div>
                                 <!--====== End - PHONE ======-->
 
 
@@ -140,15 +140,15 @@
 
                                     <label class="gl-label" for="billing-street">STREET ADDRESS *</label>
 
-                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-street" placeholder="House name and street name" data-bill="">
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-street" placeholder="House name and street name" data-bill="" name="adresse" [(ngModel)]="commande.adresse">
                                 </div>
                                 <div class="u-s-m-b-15">
 
                                     <!--====== Select Box ======-->
 
                                     <label class="gl-label" for="billing-country">Delivery company *</label>
-                                    <select class="select-box select-box--primary-style" id="billing-country" data-bill="">
-                                        <option selected="" value="">Choose company</option>
+                                    <select *ngFor="let st of stls" name="couponCode" [(ngModel)]="commande.idStl" class="select-box select-box--primary-style" id="billing-country" data-bill="" name="idStl" [(ngModel)]="commande.idStl">
+                                        <option [value]="st.id" >{{st.intitule}}</option>
                                     </select>
                                     <!--====== End - Select Box ======-->
                                 </div>
@@ -156,19 +156,10 @@
 
                                     <label class="gl-label" for="billing-Coupon">Coupon *</label>
 
-                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-Coupon" placeholder="House name and street name" data-bill="">
-                                </div>
-                                <div class="collapse u-s-m-b-15" id="create-account">
-
-                                    <span class="gl-text u-s-m-b-15">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</span>
-                                    <div>
-
-                                        <label class="gl-label" for="reg-password">Account Password *</label>
-
-                                        <input class="modInput input-text input-text--primary-style" type="text" data-bill="" id="reg-password"></div>
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-Coupon" placeholder="House name and street name" data-bill="" name="coupon" [(ngModel)]="commande.coupon">
                                 </div>
                                 <div class="mt-4 ">
-                                    <button class="dash__custom-link btn--e-brand-b-2" type="submit" (click)="order()">SAVE</button>
+                                    <button class="dash__custom-link btn--e-brand-b-2" type="submit">SAVE</button>
                                 </div>
                             </div>
                         </form>

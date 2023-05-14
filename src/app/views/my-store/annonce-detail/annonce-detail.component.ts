@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { ShopService } from '../../../service/shop.service';
 import { AnnonceDto } from '../../../entities/AnnonceDto';
 import { Client } from '../../../entities/Client';
+import { Commande } from '../../../entities/Commande';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -19,6 +20,8 @@ export class AnnonceDetailComponent implements OnInit {
   images:any=[];
   slides:any=[];
   client=new Client;
+  commande=new Commande;
+  stls:any=[];
   constructor(private shopService : ShopService,private route: ActivatedRoute,private router:Router) {}
 
   ngOnInit(): void {
@@ -79,10 +82,6 @@ export class AnnonceDetailComponent implements OnInit {
     });  
   }
 
-    order(){
-    
-    }
-
     getSlide() {
         return this.images[this.i];
     }
@@ -120,7 +119,16 @@ export class AnnonceDetailComponent implements OnInit {
     navigateToProductDetails(id: any) {
       this.router.navigateByUrl('/my-site//product-details',id)
     }
-    checkCoupon(){
-      
+    getStl(){
+      this.shopService.getAllSocietesLivraison().subscribe(res=>{
+        console.log(res);
+        this.stls=res;
+      })
+    }
+    addCommande(){
+      //this.commande.idProd=
+      this.shopService.addCommande(this.commande).subscribe(res=>{
+        console.log(res);
+      })
     }
 }

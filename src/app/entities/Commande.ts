@@ -1,7 +1,9 @@
 export class Commande{
-    idCl !:number;
+    idStl !:number;
+    idProd !:number;
     nom!:string;
     prenom!:string;
+    adresse!:string;
     tel !:string;
     email !:string;
     coupon!:string;
