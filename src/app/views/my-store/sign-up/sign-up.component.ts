@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
 import { Internaute } from 'src/app/entities/Internaute';
 import { Magasin } from 'src/app/entities/Magasin';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -12,7 +13,7 @@ internaute=new Internaute
 magasin=new Magasin
 isInternaute = true
 isStore = true
-  constructor(private loginService: AuthService) { }
+  constructor(private loginService: AuthService,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ isStore = true
     
     this.loginService.addInternaute(this.internaute).subscribe(res => {
       console.log(res);
+      this.route.navigateByUrl('/my-site/sign-in')
     }) 
   }
 
@@ -30,6 +32,7 @@ isStore = true
     
     this.loginService.addMagasin(this.magasin).subscribe(res => {
       console.log(res);
+      this.route.navigateByUrl('/my-site/sign-in')
     }) 
   }
 

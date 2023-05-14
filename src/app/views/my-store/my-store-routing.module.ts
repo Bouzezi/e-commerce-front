@@ -10,6 +10,9 @@ import { EditProfileMagasinComponent } from './magasin/edit-profile-magasin/edit
 import { ListProductsComponent } from './magasin/list-products/list-products.component';
 import { AddProductComponent } from './magasin/add-product/add-product.component';
 import { AnnonceDetailComponent } from './annonce-detail/annonce-detail.component';
+import { DashInternauteComponent } from './internaute/dash-internaute/dash-internaute.component';
+import { AddProductInternauteComponent } from './internaute/add-product-internaute/add-product-internaute.component';
+import { EditProfileInternauteComponent } from './internaute/edit-profile-internaute/edit-profile-internaute.component';
 
 const routes: Routes = [
   {
@@ -91,6 +94,27 @@ const routes: Routes = [
         component: AnnonceDetailComponent,
         data: {
           title: 'annonce-detail',
+        },
+      },
+      {
+        path: 'dash-internaute',
+        component: DashInternauteComponent,
+        data: {
+          title: 'dash-internaute',
+        },
+      },
+      {
+        path: 'add-product-internaute',
+        component: AddProductInternauteComponent,
+        data: {
+          title: 'add-product-internaute',
+        },
+      },
+      {
+        path: 'edit-profile-internaute',
+        component: EditProfileInternauteComponent,
+        data: {
+          title: 'edit-profile-internaute',
         },
       },
     ],

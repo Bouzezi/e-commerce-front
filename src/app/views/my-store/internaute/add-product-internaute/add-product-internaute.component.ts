@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from 'src/app/entities/Products'
 import { MagasinService } from '../../../../service/magasin.service';
+import { Products } from 'src/app/entities/Products'
+import { Annonce } from 'src/app/entities/Annonce';
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
+  selector: 'app-add-product-internaute',
+  templateUrl: './add-product-internaute.component.html',
+  styleUrls: ['./add-product-internaute.component.scss']
 })
-export class AddProductComponent implements OnInit {
-produit:any=new Products
-id_store:any
-subCateg:any
-  selectedFiles!: FileList;
-
+export class AddProductInternauteComponent implements OnInit {
+  produit:any=new Products
+  id_internaute:any
+  subCateg:any
+    selectedFiles!: FileList;
+    annonce=new Annonce
   constructor(private magasinService : MagasinService) { }
 
   ngOnInit(): void {
-    this.id_store=localStorage.getItem("id_store");
+    this.id_internaute=localStorage.getItem("id_inter");
     this.getAllSubCategories();
-    
   }
   getAllSubCategories(){
     this.magasinService.getAllSubCateg().subscribe((res:any)=>{
@@ -26,11 +26,13 @@ subCateg:any
     })
   }
   addProduct(){
-    this.produit.idClient=this.id_store;
+    this.produit.idClient=this.id_internaute;
     console.log(this.produit);
     this.magasinService.addProduct(this.produit).subscribe(res => {
       console.log(res);
       this.upload();
+      this.annonce.ProduitId=res.id;
+      this.publish();
       this.magasinService.sendUpdate("notifiy")
     }) 
     
@@ -67,6 +69,14 @@ subCateg:any
         
     });
   }
-  
+
+  publish(){
+    this.annonce.idC=this.id_internaute;
+   
+    this.magasinService.createAnnonce(this.annonce).subscribe(res => {
+      console.log(res);
+      this.magasinService.sendUpdate("notifiy")
+    })
+  } 
+
 }
- 

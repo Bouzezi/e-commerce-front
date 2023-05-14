@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
       console.log(res);
       this.id_inter=res;
       localStorage.setItem("id_inter",this.id_inter);
-      this.route.navigateByUrl('/my-site/dash-magasin')
+      this.route.navigateByUrl('/my-site/dash-internaute')
     }) 
   }
 

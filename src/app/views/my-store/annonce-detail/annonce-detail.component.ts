@@ -117,8 +117,10 @@ export class AnnonceDetailComponent implements OnInit {
       })   
     }
 
-    navigateToProductDetails(id: number) {
-      this.router.navigate(['/product-details', id]);
+    navigateToProductDetails(id: any) {
+      this.router.navigateByUrl('/my-site//product-details',id)
     }
-  
+    checkCoupon(){
+      
+    }
 }

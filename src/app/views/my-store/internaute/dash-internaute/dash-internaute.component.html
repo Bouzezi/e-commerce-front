@@ -33,7 +33,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-12">
-                            <app-dash-magasin-menu></app-dash-magasin-menu>
+                            <app-dash-internaute-menu></app-dash-internaute-menu>
                         </div>
                         <div class="col-lg-9 col-md-12">
                             <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white u-s-m-b-30">
@@ -48,11 +48,11 @@
                                                     <h2 class="dash__h2 u-s-m-b-8">PERSONAL PROFILE</h2>
                                                     <div class="dash__link dash__link--secondary u-s-m-b-8">
 
-                                                        <a href="/#/my-site/edit-profile-magasin">Edit</a></div>
+                                                        <a href="/#/my-site/edit-profile-internaute">Edit</a></div>
 
-                                                    <span class="dash__text">{{magasin.intitule}}</span>
+                                                    <span class="dash__text">{{client.owner}}</span>
 
-                                                    <span class="dash__text">{{magasin.email}}</span>
+                                                    <span class="dash__text">{{client.email}}</span>
                                                 
                                                 </div>
                                             </div>
@@ -60,54 +60,14 @@
                                         <div class="col-lg-4 u-s-m-b-30">
                                             <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
                                                 <div class="dash__pad-3">
-                                                    <h2 class="dash__h2 u-s-m-b-8">LIST PRODUCTS</h2>
-
-                                                    <span class="dash__text-2 u-s-m-b-8">All products in your store</span>
                                                     <div class="dash__link dash__link--secondary u-s-m-b-8">
-                                                        <a href="/#/my-site/list-products-magasin">View</a>
-                                                    </div>
-                                                    <div class="dash__link dash__link--secondary u-s-m-b-8">
-                                                        <a href="/#/my-site/add-product">Add new Product</a>
+                                                        <a href="/#/my-site/add-product-internaute">Add new Product</a>
                                                     </div>    
                                                     <span class="dash__text">You can add a new product now</span>
                                                      <div class="d-flex justify-content-around mt-2">
                                                         <img src="../../../../../assets/images/product/new-product.png" />
                                                      </div>   
                                                     
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 u-s-m-b-30">
-                                            <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
-                                                <div class="dash__pad-3">
-                                                    <h2 class="dash__h2 u-s-m-b-8">Select Coupon</h2>
-                                                    <div class="u-s-m-b-30">
-                                                        <select class="select-box select-box--primary-style u-w-100" id="couponCode" name="couponCode" (change)="updateCoupon()" [(ngModel)]="coupon.id">
-                                                            <option *ngFor="let coupon of coupons"  [value]="coupon.id" >
-                                                                {{coupon.code}}&nbsp;&nbsp;&nbsp;
-                                                                {{coupon.value}}
-                                                              </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="dash__pad-3" style="margin-top: -50px">
-                                                    <h2 class="dash__h2 u-s-m-b-8">Create Coupon</h2>
-                                                    
-                                                    <form class="dash-edit-p" (ngSubmit)="addCoupon()" #Form="ngForm">
-                                                        <div class="gl-inline">
-                                                            <div class="u-s-m-b-30">
-                                                                <label class="gl-label" for="reg-code ">Code</label>
-                                                                <input class="input-text input-text--primary-style" type="text" id="reg-code " placeholder="code coupon" name="valeur" [(ngModel)]="coupon.value">
-                                                            </div>
-                                                        </div>
-                                                        <div class="gl-inline">
-                                                            <div class="u-s-m-b-30">
-                                                                <label class="gl-label" for="reg-value ">Value</label>
-                                                                <input class="input-text input-text--primary-style" type="number" min="1" max="99" id="reg-value " placeholder="code coupon" name="pourcentage" [(ngModel)]="coupon.pourcentage">
-                                                            </div>
-                                                        </div>
-                                                        <button class="address-book-edit btn--e-transparent-platinum-b-2 px-5 mx-4" type="submit">Create</button>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,7 +89,8 @@
                                             <tr>
                                                 <th>Id</th>
                                                 <th>AnnonceName</th>
-                                                <th>dateCreation</th> 
+                                                <th>dateCreation</th>
+                                                <th>Action</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -137,6 +98,7 @@
                                                 <td>{{annonce.id}}</td>
                                                 <td>{{annonce.nomAnnonce}}</td>
                                                 <td>{{annonce.dateCreation}}</td>
+                                                <td><button class="address-book-edit btn--e-transparent-platinum-b-2" (click)="delete(annonce.produit.id)">Delete</button></td>
                                             </tr>
                                         </tbody>
                                     </table>

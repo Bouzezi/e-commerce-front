@@ -104,27 +104,25 @@
                         <form class="checkout-f__delivery">
                             <div class="u-s-m-b-30">
                                 <!--====== First Name, Last Name ======-->
-                                <div class="gl-inline">
                                     <div class="u-s-m-b-15">
 
                                         <label class="gl-label" for="billing-fname">FIRST NAME *</label>
 
-                                        <input class="input-text input-text--primary-style" type="text" id="billing-fname" data-bill=""></div>
-                                    <div class="u-s-m-b-15">
+                                        <input class="modInput input-text input-text--primary-style" type="text" id="billing-fname" data-bill="">
+                                    </div>
+                                <div class="u-s-m-b-15">
 
-                                        <label class="gl-label" for="billing-lname">LAST NAME *</label>
+                                    <label class="gl-label" for="billing-lname">LAST NAME *</label>
 
-                                        <input class="input-text input-text--primary-style" type="text" id="billing-lname" data-bill=""></div>
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-lname" data-bill="">
                                 </div>
                                 <!--====== End - First Name, Last Name ======-->
-
-
                                 <!--====== E-MAIL ======-->
                                 <div class="u-s-m-b-15">
 
                                     <label class="gl-label" for="billing-email">E-MAIL *</label>
 
-                                    <input class="input-text input-text--primary-style" type="text" id="billing-email" data-bill=""></div>
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-email" data-bill=""></div>
                                 <!--====== End - E-MAIL ======-->
 
 
@@ -133,7 +131,7 @@
 
                                     <label class="gl-label" for="billing-phone">PHONE *</label>
 
-                                    <input class="input-text input-text--primary-style" type="text" id="billing-phone" data-bill=""></div>
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-phone" data-bill=""></div>
                                 <!--====== End - PHONE ======-->
 
 
@@ -142,53 +140,24 @@
 
                                     <label class="gl-label" for="billing-street">STREET ADDRESS *</label>
 
-                                    <input class="input-text input-text--primary-style" type="text" id="billing-street" placeholder="House name and street name" data-bill=""></div>
-                                <div class="u-s-m-b-15">
-
-                                    <label for="billing-street-optional"></label>
-
-                                    <input class="input-text input-text--primary-style" type="text" id="billing-street-optional" placeholder="Apartment, suite unit etc. (optional)" data-bill=""></div>
-                                <!--====== End - Street Address ======-->
-
-
-                                <!--====== Country ======-->
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-street" placeholder="House name and street name" data-bill="">
+                                </div>
                                 <div class="u-s-m-b-15">
 
                                     <!--====== Select Box ======-->
 
-                                    <label class="gl-label" for="billing-country">COUNTRY *</label><select class="select-box select-box--primary-style" id="billing-country" data-bill="">
-                                        <option selected="" value="">Choose Country</option>
-                                        <option value="uae">United Arab Emirate (UAE)</option>
-                                        <option value="uk">United Kingdom (UK)</option>
-                                        <option value="us">United States (US)</option>
+                                    <label class="gl-label" for="billing-country">Delivery company *</label>
+                                    <select class="select-box select-box--primary-style" id="billing-country" data-bill="">
+                                        <option selected="" value="">Choose company</option>
                                     </select>
                                     <!--====== End - Select Box ======-->
                                 </div>
-                                <!--====== End - Country ======-->
-
-
-                                <!--====== Town / City ======-->
                                 <div class="u-s-m-b-15">
 
-                                    <label class="gl-label" for="billing-town-city">TOWN/CITY *</label>
+                                    <label class="gl-label" for="billing-Coupon">Coupon *</label>
 
-                                    <input class="input-text input-text--primary-style" type="text" id="billing-town-city" data-bill=""></div>
-                                <!--====== End - Town / City ======-->
-                                <div class="u-s-m-b-10">
-
-                                    <!--====== Check Box ======-->
-                                    <div class="check-box">
-
-                                        <input type="checkbox" id="make-default-address" data-bill="">
-                                        <div class="check-box__state check-box__state--primary">
-
-                                            <label class="check-box__label" for="make-default-address">Make default shipping and billing address</label></div>
-                                    </div>
-                                    <!--====== End - Check Box ======-->
+                                    <input class="modInput input-text input-text--primary-style" type="text" id="billing-Coupon" placeholder="House name and street name" data-bill="">
                                 </div>
-                                <div class="u-s-m-b-10">
-
-                                    <a class="gl-link" href="#create-account" data-toggle="collapse">Want to create a new account?</a></div>
                                 <div class="collapse u-s-m-b-15" id="create-account">
 
                                     <span class="gl-text u-s-m-b-15">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</span>
@@ -196,14 +165,11 @@
 
                                         <label class="gl-label" for="reg-password">Account Password *</label>
 
-                                        <input class="input-text input-text--primary-style" type="text" data-bill="" id="reg-password"></div>
+                                        <input class="modInput input-text input-text--primary-style" type="text" data-bill="" id="reg-password"></div>
                                 </div>
-                                <div class="u-s-m-b-10">
-
-                                    <label class="gl-label" for="order-note">ORDER NOTE</label><textarea class="text-area text-area--primary-style" id="order-note"></textarea></div>
-                                <div>
-
-                                    <button class="btn btn--e-transparent-brand-b-2" type="submit" (click)="order()">SAVE</button></div>
+                                <div class="mt-4 ">
+                                    <button class="dash__custom-link btn--e-brand-b-2" type="submit" (click)="order()">SAVE</button>
+                                </div>
                             </div>
                         </form>
                     </div>

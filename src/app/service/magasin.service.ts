@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpEvent, HttpParams, HttpRequest } from '@angular/common/http';
 import { Products } from '../entities/Products';
 import { Annonce } from '../entities/Annonce';
+import { Coupon } from '../entities/Coupon';
 
 @Injectable({
   providedIn: 'root'
@@ -62,5 +63,14 @@ export class MagasinService {
   }
   nombreProduitAnnonce(id:number):Observable<Object>{
     return this.http.get('http://localhost:8080/api/produit/countByClientIdAndStatut/'+id);
+  }
+  createCoupon(coupon:Coupon):Observable<any>{
+    return this.http.post('http://localhost:8080/api/coupon/create',coupon);
+  }
+  getCoupons(id:number):Observable<Object>{
+    return this.http.get('http://localhost:8080/api/coupon/getByIdClient/'+id);
+  }
+  updateCoupon(coupon:Coupon):Observable<any>{
+    return this.http.post('http://localhost:8080/api/coupon/update',coupon);
   }
 }
