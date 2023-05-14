@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MagasinService } from '../../../../service/magasin.service';
 import { Magasin } from 'src/app/entities/Magasin';
+import { ToasterComponent, ToasterPlacement } from '@coreui/angular';
+import { AppToastComponent } from 'src/app/views/notifications/toasters/toast-simple/toast.component';
 
 @Component({
   selector: 'app-edit-profile-magasin',
@@ -8,6 +10,9 @@ import { Magasin } from 'src/app/entities/Magasin';
   styleUrls: ['./edit-profile-magasin.component.scss']
 })
 export class EditProfileMagasinComponent implements OnInit {
+  @ViewChild(ToasterComponent) toaster!: ToasterComponent;
+  placement = ToasterPlacement.TopEnd;
+  
   id_store:any;
   magasin:any=new Magasin
   constructor(private magasinService : MagasinService) { }
@@ -27,6 +32,19 @@ export class EditProfileMagasinComponent implements OnInit {
   updateProfileStore(){
     this.magasinService.updateProfileStore(this.id_store,this.magasin).subscribe(res => {
       console.log(res);
+      this.addToast(`Profile updated`,'success'); 
     }) 
+  }
+
+  addToast(con:string,color:string) {   
+    const options = {
+      title: `Toast`,
+      body:con,
+      delay: 3000,
+      placement: this.placement,
+      color: color,
+      autohide: true,
+    }
+    const componentRef = this.toaster.addToast(AppToastComponent, { ...options });
   }
 }

@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MagasinService } from '../../../../service/magasin.service';
 import { Products } from 'src/app/entities/Products'
 import { Annonce } from 'src/app/entities/Annonce';
+import { ToasterComponent, ToasterPlacement } from '@coreui/angular';
+import { AppToastComponent } from 'src/app/views/notifications/toasters/toast-simple/toast.component';
 @Component({
   selector: 'app-add-product-internaute',
   templateUrl: './add-product-internaute.component.html',
   styleUrls: ['./add-product-internaute.component.scss']
 })
 export class AddProductInternauteComponent implements OnInit {
+  @ViewChild(ToasterComponent) toaster!: ToasterComponent;
+  placement = ToasterPlacement.TopEnd;
+
   produit:any=new Products
   id_internaute:any
   subCateg:any
@@ -33,7 +38,8 @@ export class AddProductInternauteComponent implements OnInit {
       this.upload();
       this.annonce.ProduitId=res.id;
       this.publish();
-      this.magasinService.sendUpdate("notifiy")
+      this.magasinService.sendUpdate("notifiy");
+      this.addToast(`Product added`,'success');
     }) 
     
   }
@@ -78,5 +84,17 @@ export class AddProductInternauteComponent implements OnInit {
       this.magasinService.sendUpdate("notifiy")
     })
   } 
+
+  addToast(con:string,color:string) {   
+    const options = {
+      title: `Toast`,
+      body:con,
+      delay: 3000,
+      placement: this.placement,
+      color: color,
+      autohide: true,
+    }
+    const componentRef = this.toaster.addToast(AppToastComponent, { ...options });
+  }
 
 }
