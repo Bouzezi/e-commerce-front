@@ -4955,9 +4955,7 @@ input::-ms-clear {
       font-size: 13px;
       font-weight: 700;
       color: #333333; }
-    .shop-w__category-list > li ul {
-      display: none;
-      padding-left: 8px; }
+   
       .shop-w__category-list > li ul li a {
         font-size: 13px;
         text-decoration: none;
