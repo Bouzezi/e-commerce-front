@@ -13,7 +13,7 @@
   <mat-label>Product Category</mat-label>
   <mat-select formControlName="categories"  required>
     <mat-option *ngFor="let categ of categories"  [value]="categ.id">
-      {{categ.name}}
+      {{categ.nomCategory}}
     </mat-option>
   </mat-select>
   <!-- <mat-select *ngIf="myData.title == 'Update Product' " formControlName="categories" [(value)]="category" required>

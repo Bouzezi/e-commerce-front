@@ -1,6 +1,6 @@
 export class Category{	
     id !:number;
-    name !:string
+    nomCategory !:string
     constructor(){
     }
 }

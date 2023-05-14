@@ -22,6 +22,7 @@ export class AnnonceDetailComponent implements OnInit {
   client=new Client;
   commande=new Commande;
   stls:any=[];
+  idProduit:any;
   constructor(private shopService : ShopService,private route: ActivatedRoute,private router:Router) {}
 
   ngOnInit(): void {
@@ -57,6 +58,7 @@ export class AnnonceDetailComponent implements OnInit {
         this.ann.idAnnonce=this.annonce.id;
         this.ann.idSousCateg=this.annonce.produit.sousCategory.id;
         this.ann.nomAnnonce=this.annonce.nomAnnonce;
+        this.idProduit=this.annonce.produit.id;
         this.listAnnonces.push(this.ann);
         this.FindByAnnonceSousCategoryLimit(this.ann.idSousCateg);
         this.getClientById(this.ann.idC)
@@ -126,7 +128,8 @@ export class AnnonceDetailComponent implements OnInit {
       })
     }
     addCommande(){
-      //this.commande.idProd=
+      this.commande.idProd=this.idProduit;
+      console.log(this.idProduit);
       this.shopService.addCommande(this.commande).subscribe(res=>{
         console.log(res);
       })

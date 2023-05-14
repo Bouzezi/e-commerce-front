@@ -19,7 +19,7 @@ export class ProductsListComponent implements OnInit {
   @ViewChild(ToasterComponent) toaster!: ToasterComponent;
   placement = ToasterPlacement.TopEnd;
 
-  displayedColumns: string[] = ['name','description','category','price','action'];
+  displayedColumns: string[] = ['id','Name','action'];
   dataSource !: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

@@ -20,7 +20,7 @@ categoryForm!: FormGroup;
   ngOnInit(): void {
     this.category=new Category();
     this.categoryForm=this.fb.group({
-      name : ['',Validators.required]
+      nomCategory : ['',Validators.required]
     });
 
      console.log(this.myData.id);
@@ -61,7 +61,7 @@ categoryForm!: FormGroup;
   }
   updateCategory(){
     this.category.id=this.myData.id;
-    this.category.name=this.categoryForm.value.name;
+    this.category.nomCategory=this.categoryForm.value.name;
     
        this.Myservice.updateCategory(this.category).subscribe((data:any)=>{
         console.log(data);

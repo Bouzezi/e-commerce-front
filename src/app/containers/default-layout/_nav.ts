@@ -19,15 +19,10 @@ export const navItems: INavData[] = [
       text: 'View'
     }
   },
-  {
+/*   {
     title: true,
     name: 'Theme'
-  },
-  {
-    name: 'Themes',
-    url: '/theme/themes',
-    iconComponent: { name: 'cil-drop' }
-  },
+  }, */
   {
     title: true,
     name: 'Categories'
@@ -39,10 +34,10 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Products'
+    name: 'Sub Categories'
   },
   {
-    name: 'Products',
+    name: 'Sub Categories',
     url: '/products/productsList',
     iconComponent: { name: 'cil-settings' }
   },
@@ -51,15 +46,15 @@ export const navItems: INavData[] = [
     name: 'Settings'
   },
   {
-    name: 'Shop',
+    name: 'Delivery Company',
     url: '/settings/shopconfig',
     iconComponent: { name: 'cil-settings' }
   },
-  {
+ /*  {
     name: 'Contact',
     url: '/settings/contact',
     iconComponent: { name: 'cil-people' }
-  },
+  }, */
   /* {
     name: 'Components',
     title: true

@@ -1,13 +1,28 @@
-<form class="row g-3 needs-validation" [formGroup]="shopSettings" (ngSubmit)="onSubmit()" novalidate>
+<form class="row g-3 needs-validation" (ngSubmit)="onSubmit()" novalidate>
 <div class="md-4">
-    <label for="shopName" class="form-label">Shop Name</label> 
-    <input type="text" class="form-control" id="shopName"  formControlName="shopName" required>
+    <label for="adresse" class="form-label">Adresse</label> 
+    <input type="text" class="form-control" id="adresse"  [(ngModel)]="delivery.adresse" name="adresse" required>
   </div>
-<div class="md-4">
-    <label for="image" class="form-label">Logo</label>
-    <img [src]="imageSource" alt="logo" [style.display]="display">
-    <input type="file" class="form-control" id="image" aria-label="file example" (change)="onChange($event)"  required>
-</div>
+  <div class="md-4">
+    <label for="email" class="form-label">Email</label> 
+    <input type="text" class="form-control" id="emaile" [(ngModel)]="delivery.email" name="email" required>
+  </div>
+  <div class="md-4">
+    <label for="name" class="form-label">Company Name</label> 
+    <input type="text" class="form-control" id="name" [(ngModel)]="delivery.intitule" name="intitule" required>
+  </div>
+  <div class="md-4">
+    <label for="tax" class="form-label">Tax number</label> 
+    <input type="text" class="form-control" id="tax" [(ngModel)]="delivery.matriculeFiscale" name="matriculeFiscale" required>
+  </div>
+  <div class="md-4">
+    <label for="ref" class="form-label">Ref</label> 
+    <input type="number" class="form-control" id="ref" min="0" [(ngModel)]="delivery.refSociete" name="refSociete" required>
+  </div>
+  <div class="md-4">
+    <label for="phone" class="form-label">Phone</label> 
+    <input type="text" class="form-control" id="phone" [(ngModel)]="delivery.tel" name="tel" required>
+  </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
     <button class="btn btn-secondary" style="margin-left:20px" type="reset">Reset</button>
