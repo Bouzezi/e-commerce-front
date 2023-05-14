@@ -30,8 +30,9 @@ subCateg:any
     console.log(this.produit);
     this.magasinService.addProduct(this.produit).subscribe(res => {
       console.log(res);
+      this.upload();
     }) 
-    this.upload();
+    
   }
   selectFiles(event :any) {
 

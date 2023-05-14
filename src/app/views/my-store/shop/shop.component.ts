@@ -48,6 +48,7 @@ image:any
         ann.prix=e.produit.prix;
         ann.description=e.produit.description;
         ann.idAnnonce=e.id;
+        ann.nomAnnonce=e.nomAnnonce;
         this.listAnnonces.push(ann);
     });  
   }
@@ -55,5 +56,9 @@ image:any
   getCurrentAnnonce(annonce:AnnonceDto){
       this.shopService.sendUpdate(annonce);
   }
+  findBySubCateg(){
+
+  }
+  
 
 }

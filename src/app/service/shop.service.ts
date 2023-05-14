@@ -28,4 +28,16 @@ export class ShopService {
   getOneImage(id:number):Observable<any>{
     return this.http.get('http://localhost:8080/api/image/getOneImage/'+id);
   }
+  getListImages(id:number):Observable<any>{
+    return this.http.get('http://localhost:8080/api/image/getImages/'+id);
+  }
+  getAnnonceById(id:number):Observable<any>{
+    return this.http.get('http://localhost:8080/api/annonce/getAnnonceById/'+id);
+  }
+  FindByAnnonceSousCategoryLimit(id:any):Observable<Object>{
+    const url = 'http://localhost:8080/api/produit/FindByAnnonceSousCategoryLimit';
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("v1",id);
+    return this.http.get(url,{params:queryParams});
+  }
 }

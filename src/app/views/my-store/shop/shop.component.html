@@ -28,7 +28,7 @@
                                                         <ul  class="collapse show" id="categ{{index}}">
                                                             <li *ngFor="let subcat of cat.ss_cat">
 
-                                                                <a href="#">{{subcat.nom_sous_category}}</a></li>
+                                                                <a (click)="findBySubCateg()" >{{subcat.nom_sous_category}}</a>
                                                             <li>
                                                         </ul>
                                                     </li>
