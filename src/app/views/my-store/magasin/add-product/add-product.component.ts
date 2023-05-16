@@ -22,7 +22,7 @@ subCateg:any
   ngOnInit(): void {
     this.id_store=localStorage.getItem("id_store");
     this.getAllSubCategories();
-    
+   // this.addToast(`Product added`,'success'); 
   }
   getAllSubCategories(){
     this.magasinService.getAllSubCateg().subscribe((res:any)=>{
@@ -83,7 +83,7 @@ subCateg:any
       color: color,
       autohide: true,
     }
-    const componentRef = this.toaster.addToast(AppToastComponent, { ...options });
+    let componentRef = this.toaster.addToast(AppToastComponent, { ...options });
   }
   
 }

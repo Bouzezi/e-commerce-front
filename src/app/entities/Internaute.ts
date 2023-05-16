@@ -6,5 +6,6 @@ export class Internaute{
     nom !:string;
     prenom !:string;
     tel!:number;
+    adresse!:string;
     constructor(){}
 }

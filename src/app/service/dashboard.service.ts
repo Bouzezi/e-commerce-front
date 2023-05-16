@@ -8,10 +8,12 @@ import { Category } from '../entities/category';
 import { FormGroup } from '@angular/forms';
 import { Product } from '../entities/Product';
 import { DeliveryCompany } from '../entities/stl';
+import { SubCategory } from '../entities/subCategory';
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
+
 themeId:number=1;
   private _refreshCategory=new Subject<void>();
   get refreshCategory(){
@@ -86,28 +88,24 @@ constructor(private http:HttpClient) {};
     );
   }
 
-  addProduct(form : FormGroup):Observable<any>{
-    return this.http.post<any>('http://localhost:8000/product/new',form).pipe(
-     tap(()=>{
-       this._refreshProduct.next();
-     })
-   ); 
+  addProduct(form : SubCategory):Observable<object>{
+    return this.http.post('http://localhost:8000/api/SousCategory/createSousCategory',form);
  }
- getAllProducts():Observable<Product>{
-   return this.http.get<Product>('http://localhost:8080/api/SousCategory/getAllSousCategory');
+ getAllProducts():Observable<object>{
+   return this.http.get('http://localhost:8080/api/SousCategory/getAllSousCategory');
  }
- getOneProduct(id:number):Observable<Product>{
-   return this.http.get<Product>('http://localhost:8080/api/SousCategory/getSousCategoryById/'+id);
+ getOneProduct(id:number):Observable<object>{
+   return this.http.get('http://localhost:8080/api/SousCategory/getSousCategoryById/'+id);
  }
  deleteProduct(id:number):Observable<object>{
-   return this.http.delete('http://localhost:8080/api/SousCategory/delete/'+id).pipe(
+   return this.http.get('http://localhost:8080/api/SousCategory/delete/'+id).pipe(
      tap(()=>{
        this._refreshProduct.next(); 
      })
    );
  }
- updateProduct(prod:Product):Observable<Product>{
-   return this.http.put<Product>('http://localhost:8080/api/SousCategory/product/edit/'+prod.id,prod).pipe(
+ updateProduct(prod:SubCategory):Observable<object>{
+   return this.http.put('http://localhost:8080/api/SousCategory/product/edit/'+prod.id,prod).pipe(
      tap(()=>{
        this._refreshProduct.next();
      })
@@ -117,5 +115,32 @@ constructor(private http:HttpClient) {};
  addDelivery(delivery:DeliveryCompany):Observable<any>{
   return this.http.post<any>('http://localhost:8080/api/stelivraison/create',delivery);
  }
-
+ addSubCateg(subcateg: SubCategory):Observable<any>{
+  return this.http.post<any>('http://localhost:8080/api/SousCategory/createSousCategory',subcateg).pipe(
+    tap(()=>{
+      this._refreshProduct.next();
+    })
+  );
+ }
+  updateSubCateg(subcateg: SubCategory) :Observable<any>{
+    return this.http.put('http://localhost:8080/api/SousCategory/updateSousCategory/'+subcateg.id,subcateg);
+   }
+    /*
+  getOneSubCateg(id: number) :Observable<any>{
+    return this.http.get<any>('http://localhost:8080/api/SousCategory/getSousCategoryById/'+id);
+   }
+  
+   deleteSubCateg(id:number):Observable<object>{
+    return this.http.delete<any>('http://localhost:8080/api/SousCategory/deleteSousCategory'+id);
+  }
+  getAllSubCateg():Observable<Product>{
+    return this.http.get<Product>('http://localhost:8080/api/SousCategory/getAllSousCategory');
+  } */
+/*   updateSubCateg(subcateg: SubCategory):Observable<any>{
+    return this.http.post<any>('http://localhost:8080/api/SousCategory/updateSousCategory/'+subcateg.id,subcateg).pipe(
+      tap(()=>{
+        this._refreshProduct.next();
+      })
+    );
+   } */
 }

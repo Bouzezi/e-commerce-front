@@ -41,14 +41,11 @@ categoryForm!: FormGroup;
     
     this.Myservice.addCategory(this.categoryForm.value).subscribe((data:any)=>{
           console.log(data);
-          this.Myservice.msg='category is added successfully';
           this.categoryForm.reset();
     },(error:any)=>{
       console.log(error);
-      this.Myservice.msg='there is an error with adding category';
     } 
     );
-    console.log(this.Myservice.msg);
         
   }
   getOneCategory(){
@@ -65,13 +62,10 @@ categoryForm!: FormGroup;
     
        this.Myservice.updateCategory(this.category).subscribe((data:any)=>{
         console.log(data);
-        this.Myservice.msg='category is updated successfully';
       },(error:any)=>{
         console.log(error);
-        this.Myservice.msg='there is an error with updating category';
       }
       );
-      console.log(this.Myservice.msg); 
   }
   
 }

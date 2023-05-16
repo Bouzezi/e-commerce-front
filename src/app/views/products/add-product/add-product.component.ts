@@ -5,6 +5,7 @@ import { DashboardService } from 'src/app/service/dashboard.service';
 import {MatDialogRef} from  '@angular/material/dialog' ;
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Category } from 'src/app/entities/category';
+import { SubCategory } from 'src/app/entities/subCategory';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -12,23 +13,20 @@ import { Category } from 'src/app/entities/category';
 })
 export class AddProductComponent implements OnInit {
   msg!:string;
-  product !:Product;
+  subcateg=new SubCategory;
 productForm!: FormGroup;
-categories:Category[]=[];
+idCategory:Category[]=[];
   constructor(private Myservice:DashboardService,private fb:FormBuilder,
     private dialogRef:MatDialogRef<AddProductComponent>,@Inject(MAT_DIALOG_DATA) public myData: {title:string,id: number}) {
     }
 
   ngOnInit(): void {
     this.getCategories();
-    this.product=new Product();
     this.productForm=this.fb.group({
-      libelle : ['',Validators.required],
-      description : ['',Validators.required],
-      price : ['',Validators.required],
-      categories : ['',Validators.required]
+      NomSousCategory : ['',Validators.required],
+      idCategory : ['',Validators.required]
     });
-    console.log(this.categories);
+    console.log(this.idCategory);
     
      console.log(this.myData.id);
     if(this.myData.id != -1)
@@ -41,7 +39,7 @@ categories:Category[]=[];
       console.log(data);  
        for (const key in data) {
         if (data.hasOwnProperty(key)) {
-          this.categories.push(data[key]);
+          this.idCategory.push(data[key]);
         }
       } 
     });
@@ -49,54 +47,59 @@ categories:Category[]=[];
 
   manageProduct(){    
      if(this.myData.id != -1)
-    this.updateProduct();
+    this.updateSubCateg();
     else 
-    this.addProduct();
+    this.addSubCateg();
 
   }
   addProduct(){
     console.log(this.productForm.value);
+    this.subcateg.NomSousCategory=this.productForm.get('NomSousCategory')?.value;
+    this.subcateg.idCategory=this.productForm.get('idCategory')?.value;
+    console.log(this.subcateg);
     
-    this.Myservice.addProduct(this.productForm.value).subscribe((data:any)=>{
+    this.Myservice.addProduct(this.subcateg).subscribe((data:any)=>{
           console.log(data);
-          this.Myservice.msg='product is added successfully';
+          //this.Myservice.msg='product is added successfully';
           this.productForm.reset();
     },(error:any)=>{
       console.log(error);
-      this.Myservice.msg='there is an error with adding product';
+      //this.Myservice.msg='there is an error with adding product';
     } 
     );
-    console.log(this.Myservice.msg);
+    //console.log(this.Myservice.msg);
         
+  }
+  addSubCateg(){
+    this.subcateg.NomSousCategory=this.productForm.get('NomSousCategory')?.value;
+    this.subcateg.idCategory=this.productForm.get('idCategory')?.value;
+    console.log(this.subcateg);
+    this.Myservice.addSubCateg(this.subcateg).subscribe(res=>{
+      console.log(res);
+      
+    })
   }
   getOneProduct(){
     this.Myservice.getOneProduct(this.myData.id).subscribe((data:any)=>{
       console.log(data);
-      this.productForm.get('libelle')?.setValue(data.libelle);
-      this.productForm.get('description')?.setValue(data.description);
-      this.productForm.get('price')?.setValue(data.prix);
-      this.productForm.get('categories')?.setValue(data.category[0]);
+      this.productForm.get('NomSousCategory')?.setValue(data.nom_sous_category);
+      this.productForm.get('idCategory')?.setValue(data.category[0]);
     },(error:any)=> console.log(error)
     );
     
   }
-  updateProduct(){
-    this.product.id=this.myData.id;
-    this.product.libelle=this.productForm.value.libelle;
-    this.product.description=this.productForm.value.description;
-    this.product.price=this.productForm.value.price;
-    this.product.categories=this.productForm.value.categories;
-    console.log(this.product);
+  updateSubCateg(){
+    this.subcateg.id=this.myData.id;
+    this.subcateg.NomSousCategory=this.productForm.get('NomSousCategory')?.value;
+    console.log(this.subcateg);
     
-       this.Myservice.updateProduct(this.product).subscribe((data:any)=>{
+       this.Myservice.updateSubCateg(this.subcateg).subscribe((data:any)=>{
         console.log(data);
-        this.Myservice.msg='product is updated successfully';
       },(error:any)=>{
         console.log(error);
-        this.Myservice.msg='there is an error with updating product';
       }
       );
-      console.log(this.Myservice.msg); 
+      window.location.reload();
   }
 
 }

@@ -73,8 +73,10 @@ export class ProductsListComponent implements OnInit {
   delete(id:number){
     this.Myservice.deleteProduct(id).subscribe((data:any)=>{
       console.log(data);
+      
       },(error:any)=> console.log(error)
       );
+      window.location.reload();
   }
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {

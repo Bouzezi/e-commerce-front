@@ -28,14 +28,13 @@ export class AnnonceDetailComponent implements OnInit {
   ngOnInit(): void {
     this.idAnnonce= this.route.snapshot.params['id'];
     this.getAnnonceById();
-    
-    
   }
 
   getAnnonceById(){
     this.shopService.getAnnonceById(this.idAnnonce).subscribe(res=>{
       console.log(res);
       this.annonce=res;
+      this.getClientById(this.annonce.idC)
       this.getAnnonce(); 
     })
   }
@@ -61,7 +60,7 @@ export class AnnonceDetailComponent implements OnInit {
         this.idProduit=this.annonce.produit.id;
         this.listAnnonces.push(this.ann);
         this.FindByAnnonceSousCategoryLimit(this.ann.idSousCateg);
-        this.getClientById(this.ann.idC)
+       
     }
 
     getAnnoncesList(myListAnnonce:any){

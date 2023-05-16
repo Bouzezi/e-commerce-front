@@ -21,7 +21,7 @@ import { DashInternauteComponent } from './internaute/dash-internaute/dash-inter
 import { AddProductInternauteComponent } from './internaute/add-product-internaute/add-product-internaute.component';
 import { DashInternauteMenuComponent } from './internaute/dash-internaute-menu/dash-internaute-menu.component';
 import { EditProfileInternauteComponent } from './internaute/edit-profile-internaute/edit-profile-internaute.component';
-
+import { ToastModule} from '@coreui/angular'; 
 
 @NgModule({
   declarations: [
@@ -41,13 +41,14 @@ import { EditProfileInternauteComponent } from './internaute/edit-profile-intern
     DashInternauteComponent,
     AddProductInternauteComponent,
     DashInternauteMenuComponent,
-    EditProfileInternauteComponent
+    EditProfileInternauteComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     NgxPaginationModule,
-    MyStoreRoutingModule
+    MyStoreRoutingModule,
+    ToastModule
   ],
   exports:[
     HeaderComponent,

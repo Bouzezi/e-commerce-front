@@ -147,8 +147,8 @@
                                     <!--====== Select Box ======-->
 
                                     <label class="gl-label" for="billing-country">Delivery company *</label>
-                                    <select *ngFor="let st of stls" name="couponCode" [(ngModel)]="commande.idStl" class="select-box select-box--primary-style" id="billing-country" data-bill="" name="idStl" [(ngModel)]="commande.idStl">
-                                        <option [value]="st.id" >{{st.intitule}}</option>
+                                    <select  name="couponCode" [(ngModel)]="commande.idStl" class="select-box select-box--primary-style" id="billing-country" data-bill="" name="idStl" [(ngModel)]="commande.idStl">
+                                        <option *ngFor="let st of stls" [value]="st.id" >{{st.intitule}}</option>
                                     </select>
                                     <!--====== End - Select Box ======-->
                                 </div>

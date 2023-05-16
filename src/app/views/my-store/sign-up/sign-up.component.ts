@@ -45,5 +45,4 @@ isStore = true
       this.isStore=true
       this.isInternaute=false;
   }
-
 }

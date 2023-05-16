@@ -1,6 +1,8 @@
 export class SubCategory{	
     id !:number;
-    nom_sous_category !:string
+    NomSousCategory!:string
+   // categories!:any;
+    idCategory!:any;
     constructor(){
     }
 }

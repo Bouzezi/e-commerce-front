@@ -2,17 +2,13 @@
 <form [formGroup]="productForm" (ngSubmit)="manageProduct()">
 <mat-dialog-content class="mat-typography">
   <mat-form-field appearence="outline">
-      <mat-label>Product Name</mat-label>
-      <input matInput placeholder="Name" required formControlName="libelle"/>
+      <mat-label>Sub Category Name</mat-label>
+      <input matInput placeholder="Name" required formControlName="NomSousCategory"/>
   </mat-form-field>
-  <mat-form-field appearence="outline">
-    <mat-label>Product description</mat-label>
-    <input matInput placeholder="description" required formControlName="description"/>
-</mat-form-field>
 <mat-form-field appearence="outline">
   <mat-label>Product Category</mat-label>
-  <mat-select formControlName="categories"  required>
-    <mat-option *ngFor="let categ of categories"  [value]="categ.id">
+  <mat-select formControlName="idCategory"  required>
+    <mat-option *ngFor="let categ of idCategory"  [value]="categ.id">
       {{categ.nomCategory}}
     </mat-option>
   </mat-select>
@@ -21,10 +17,6 @@
       {{categ.name}}
     </mat-option>
   </mat-select> -->
-</mat-form-field>
-<mat-form-field appearence="outline">
-  <mat-label>Product price</mat-label>
-  <input matInput placeholder="price" required formControlName="price"/>
 </mat-form-field>
 </mat-dialog-content>
 <div mat-dialog-actions align="end">

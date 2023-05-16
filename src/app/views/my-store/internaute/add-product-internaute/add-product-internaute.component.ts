@@ -39,7 +39,7 @@ export class AddProductInternauteComponent implements OnInit {
       this.annonce.ProduitId=res.id;
       this.publish();
       this.magasinService.sendUpdate("notifiy");
-      this.addToast(`Product added`,'success');
+      this.addToast(`Annonce pulished`,'success');
     }) 
     
   }

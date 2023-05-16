@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Internaute } from '../entities/Internaute';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,11 @@ export class InternauteService {
   }
   getClientById(id:number):Observable<any>{
     return this.http.get('http://localhost:8080/api/client/getClientById/'+id);
+  }
+  getInternaute(id:number):Observable<any>{
+    return this.http.get('http://localhost:8080/api/internaute/getInternabyteById/'+id);
+  }
+  updateInternaute(id:number,internaute:Internaute):Observable<any>{
+    return this.http.put('http://localhost:8080/api/internaute/updateInternaute/'+id,internaute);
   }
 }
