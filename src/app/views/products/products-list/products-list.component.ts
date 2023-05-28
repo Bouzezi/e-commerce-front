@@ -40,7 +40,7 @@ export class ProductsListComponent implements OnInit {
     const dialogRef = this.dialog.open(AddProductComponent,{
       height: '350px',
       width: '350px',
-      data: {title: 'Add Product',id:-1}
+      data: {title: 'Add Sub-Catégorie',id:-1}
     });
     /* dialogRef.afterClosed (). subscribe ( result => {
       console.log(result);
@@ -67,7 +67,7 @@ export class ProductsListComponent implements OnInit {
     const dialogRef = this.dialog.open(AddProductComponent,{
       height: '350px',
       width: '350px',
-      data: {title: 'Update Product',id: id}
+      data: {title: 'Update Sub-Category',id: id}
     }); 
   }
   delete(id:number){

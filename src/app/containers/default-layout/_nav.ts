@@ -38,7 +38,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Sub Categories',
-    url: '/products/productsList',
+    url: '/Sub-Categories/Sub-CategoriesList',
     iconComponent: { name: 'cil-settings' }
   },
   {

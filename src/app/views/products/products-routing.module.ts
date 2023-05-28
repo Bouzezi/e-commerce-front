@@ -7,18 +7,18 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Products',
+      title: 'Sub Categories',
     },
     children: [
       {
         path: '',
-        redirectTo: 'productsList',
+        redirectTo: 'Sub-CategoriesList',
       },
       {
-        path: 'productsList',
+        path: 'Sub-CategoriesList',
         component: ProductsListComponent,
         data: {
-          title: 'productsList',
+          title: 'Sub-CategoriesList',
         },
       },
       {

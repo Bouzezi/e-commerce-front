@@ -53,7 +53,7 @@ const routes: Routes = [
           import('./views/categories/categories.module').then((m) => m.CategoriesModule)
       },
       {
-        path: 'products',
+        path: 'Sub-Categories',
         loadChildren: () =>
           import('./views/products/products.module').then((m) => m.ProductsModule)
       },

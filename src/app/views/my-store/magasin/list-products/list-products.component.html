@@ -92,7 +92,7 @@
                                                 <td *ngIf="prod.statut == 0">not published</td>
                                                 <td *ngIf="prod.statut == 1">published</td>
                                                 <td>{{prod.sousCategory.nom_sous_category}}</td>
-                                                <td>{{prod.description}}</td>
+                                                <td>{{prod.description | slice:0:50}} &nbsp;&nbsp;...</td>
                                             </tr>
                                         </tbody>
                                     </table>
